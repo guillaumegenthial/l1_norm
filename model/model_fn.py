@@ -21,7 +21,7 @@ def build_model(mode, inputs, params):
 
     if params.model_version == "trainable":
         out = tf.layers.dense(out, 2, activation=tf.nn.relu, use_bias=False)
-        out = tf.layers.dense(out, 1, use_bias=False)
+        out = tf.layers.dense(out, 1, activation=None, use_bias=False)
     else:
         # Cheat version where we only use relus and "+" and "-", same graph as above but hardcoded
         a = tf.get_variable('a', [1]) # fake variable just to be able to train

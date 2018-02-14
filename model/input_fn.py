@@ -56,9 +56,9 @@ def input_fn(mode, sentences, labels, params):
 
 
     dataset = (dataset
-        # .shuffle(buffer_size=buffer_size)
+        .shuffle(buffer_size=buffer_size)
         .padded_batch(1, padded_shapes=padded_shapes, padding_values=padding_values)
-        # .prefetch(1)  # make sure you always have one batch ready to serve
+        .prefetch(1)  # make sure you always have one batch ready to serve
     )
 
     # Create initializable iterator from this dataset so that we can reset at each epoch
