@@ -3,6 +3,7 @@
     "batch_size": 32,
     "num_epochs": 10,
     "model_version": "trainable",
+    "hidden_size": 20,
 
     "save_summary_steps": 100
 }

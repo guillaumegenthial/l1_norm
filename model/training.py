@@ -34,6 +34,10 @@ def train_sess(sess, model_spec, num_steps, writer, params):
     sess.run(model_spec['iterator_init_op'])
     sess.run(model_spec['metrics_init_op'])
 
+    # variables = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES)
+    # print(variables)
+    # print(sess.run(variables))
+
     # Use tqdm for progress bar
     t = trange(num_steps)
     for i in t:

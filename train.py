@@ -24,7 +24,7 @@ parser.add_argument('--restore_dir', default=None,
 
 if __name__ == '__main__':
     # Set the random seed for the whole graph for reproductible experiments
-    tf.set_random_seed(2018)
+    # tf.set_random_seed(2018)
 
     # Load the parameters from the experiment params.json file in model_dir
     args = parser.parse_args()

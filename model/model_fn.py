@@ -20,7 +20,7 @@ def build_model(mode, inputs, params):
     out = tf.expand_dims(x, axis=-1)
 
     if params.model_version == "trainable":
-        out = tf.layers.dense(out, 2, activation=tf.nn.relu, use_bias=False)
+        out = tf.layers.dense(out, params.hidden_size, activation=tf.nn.relu, use_bias=False)
         out = tf.layers.dense(out, 1, activation=None, use_bias=False)
     else:
         # Cheat version where we only use relus and "+" and "-", same graph as above but hardcoded
